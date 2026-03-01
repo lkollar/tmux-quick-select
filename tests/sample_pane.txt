@@ -1,0 +1,44 @@
+$ git log --oneline
+a1b2c3d Fix authentication bug in login handler
+e4f5678 Refactor database connection pooling
+deadbeef Add caching layer for API responses
+0123456789abcdef0123456789abcdef01234567 Initial commit
+
+$ grep -rn "TODO" src/
+src/auth/login.py:42:    # TODO: add rate limiting
+src/api/handlers.py:108: # TODO: validate input schema
+./config/settings.yaml:12: # TODO: rotate secrets
+
+$ docker ps
+CONTAINER ID   IMAGE          STATUS
+sha256:a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2   Up 3 hours
+
+$ ip addr
+    inet 192.168.1.42/24 brd 192.168.1.255 scope global
+    inet 10.0.0.1/8 scope global docker0
+    inet 172.17.0.1/16 scope global br-abc123
+
+$ cat README.md
+See [documentation](https://docs.example.com/api/v2/reference) for details.
+Report bugs at https://github.com/lkollar/tmux-quick-select/issues
+Download from https://releases.example.com/v1.2.3/tmux-quick-select.tar.gz
+
+$ ls -la /usr/local/bin/
+-rwxr-xr-x 1 root root 12345 Feb 28 10:00 /usr/local/bin/python3
+-rwxr-xr-x 1 root root  6789 Feb 28 10:00 /usr/local/bin/tmux
+lrwxrwxrwx 1 root root    42 Feb 28 10:00 /usr/local/bin/vim -> /usr/share/vim/vim91/vim
+
+$ find . -name "*.py" -type f
+./scripts/quick_select.py
+./tests/test_labels.py
+../other-project/src/main.py
+
+$ env | grep PATH
+PATH=/home/lkollar/.local/bin:/usr/local/bin:/usr/bin:/bin
+PYTHONPATH=/home/lkollar/github/tmux-quick-select
+
+$ journalctl --since today | tail
+Mar 01 10:30:00 hostname sshd[1234]: Accepted key from 10.0.0.50 port 22
+Mar 01 10:31:00 hostname nginx[5678]: 192.168.1.100 GET /api/health 200
+
+lkollar@workstation ~/github/tmux-quick-select $
